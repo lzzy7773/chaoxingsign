@@ -1,8 +1,8 @@
 name: AutoSign
 on:
   schedule:
-    - cron: '*/100 * * * *'  # 每100分钟执行一次，检查签到
-  workflow_dispatch: # 支持手动点按钮立即运行
+    - cron: '*/100 * * * *'
+  workflow_dispatch:
 
 jobs:
   run:
