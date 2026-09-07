@@ -1,7 +1,7 @@
 name: AutoSign
 on:
   schedule:
-    - cron: '*/55 * * * *'
+    - cron: '*/20 * * * *'
   workflow_dispatch:
 
 jobs:
