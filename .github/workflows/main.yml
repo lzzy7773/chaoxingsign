@@ -1,7 +1,7 @@
 name: AutoSign
 on:
   schedule:
-    - cron: '*/100 * * * *'
+    - cron: '*/55 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -9,12 +9,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: "3.9"
-      - name: Install dependencies
+
+      - name: Install packages
         run: |
-          pip install -r requirements.txt
-      - name: Run sign script
+          pip install requests rsa pycryptodome
+
+      - name: Run sign
         run: python chaoxingsign.py
